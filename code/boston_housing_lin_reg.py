@@ -7,6 +7,9 @@ from lin_reg_concise import load_array
 
 import ipdb
 
+def predict(x1, x2):
+  return 14.6162 * x1 - 33.4602 * x2 + 31.1143
+
 columns = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
 df = pd.read_csv(
   "boston-housing.csv",
@@ -47,7 +50,7 @@ for epoch in range(60):
 w = net[0].weight.data
 b = net[0].bias.data
 
-# print('error in estimating w:', true_w - w.reshape(true_w.shape))
-# print('error in estimating b:', true_b - b)
+print("w: ", w)
+print("b: ", b)
 
 ipdb.set_trace()
